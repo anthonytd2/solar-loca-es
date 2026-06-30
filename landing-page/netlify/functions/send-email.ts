@@ -79,10 +79,10 @@ const handler: Handler = async (event: HandlerEvent) => {
   try {
     await transporter.sendMail({
       from: `"[Solar Locações] Nova mensagem" <${process.env.SMTP_USER}>`, // Nome legível de envio
-      replyTo: email, // Quando responder, responde para o cliente
-      to: process.env.CONTACT_EMAIL, // O e-mail real que vai receber
+      replyTo: email,
+      to: process.env.CONTACT_EMAIL,
       subject: "[Solar Locações] Nova mensagem de simulação/contato",
-      text: message, // Versão de texto simples
+      text: message,
       html: `
         <h2>Nova mensagem recebida pela Landing Page</h2>
         <p><strong>E-mail do cliente:</strong> ${email}</p>
